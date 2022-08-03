@@ -1,0 +1,45 @@
+:root {
+  --background-primary: #b7cadb;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.hidden {
+  display: none;
+}
+
+.section-products {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  background-color: var(--background-primary);
+}
+
+.section-products-container {
+  width: 80%;
+}
+
+.product {
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  margin-bottom: 10px;
+}
+
+.position {
+  grid-column: 3/4;
+}
+
+.position-price {
+  grid-column: 4/5;
+}
