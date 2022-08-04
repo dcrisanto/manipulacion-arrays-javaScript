@@ -28,7 +28,7 @@ const products = [
 const showProducts = (event) => {
     const listProducts = event.target.myParam;
     if(listProducts.length != 0) {
-        listProducts.forEach(element => {
+        listProducts.map(element => {
             const product = document.createElement('div');
             product.classList.add('product');
             container.appendChild(product);
@@ -42,7 +42,7 @@ const showProducts = (event) => {
             containerSizesProduct.classList.add('position');
             product.appendChild(containerSizesProduct);
             const sizesProduct = element.size;
-            sizesProduct.forEach(size => {
+            sizesProduct.map(size => {
                 const sizeProduct = document.createElement('li');
                 sizeProduct.innerText = size;
                 containerSizesProduct.appendChild(sizeProduct);
@@ -51,6 +51,7 @@ const showProducts = (event) => {
             containerPricesProduct.classList.add('position-price');
             product.appendChild(containerPricesProduct);
             const pricesProduct = element.price;
+            console.log(pricesProduct);
             for(const price in pricesProduct) {
                 const priceProduct = document.createElement('li');
                 priceProduct.innerText = pricesProduct[price];

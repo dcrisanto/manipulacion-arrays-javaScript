@@ -7,22 +7,99 @@ const letters = [
     }
 ];
 
-console.log('forEach');
-letters.forEach(elment => console.log(elment));
+const newLettersForEach = [];
+const newLettersForOf = [];
+const newLettersForIn = [];
+const newLettersFor = [];
+
+letters.forEach(elment => newLettersForEach.push(elment));
 
 //vs
-console.log('for of');
 for(let element of letters) {
-    console.log(element);
+    newLettersForOf.push(element);
 }
 
-console.log('for in');
 for(let index in letters){
-    console.log(letters[index]);
+    newLettersForIn.push(letters[index]);
 }
 
-console.log('for')
 for(let index = 0; index < letters.length; index++){
     const element = letters[index];
-    console.log(element);
+    newLettersFor.push(element);
 }
+
+//map
+const newLettersMap = letters.map(element => element);
+
+const numbers = [1, 3, 4, 6, 98, 26];
+let elementsMultiplication = [];
+
+const multiplication = (array) => {
+    elementsMultiplication = array.map(number => number*2);
+    console.log(elementsMultiplication);
+    return elementsMultiplication;
+};
+
+multiplication(numbers);
+
+const students = [
+    {
+        name: 'Dorelly',
+        age: 33,
+    },
+    {
+        name: 'Roxana',
+        age: 34
+    },
+    {
+        name: 'Mary',
+        age: 20
+    },
+    {
+        name: 'Fiore',
+        age: 20
+    }
+]
+
+const addProperties = (array) => {
+    const result = array.map(element => {
+        //se copia la referencia en memoria del objeto por lo que el valor también se agrega en el array students
+        //element.nationality = 'Peruano';
+        //return element
+        return {
+            ...element,
+            nationality: 'Peruano'
+        }
+    });
+    console.log(result);
+    return result;
+};
+
+addProperties(students);
+
+const productsStock = [
+    {
+        name: "Product 1",
+        price: 1000,
+        stock: 10
+    },
+    {
+        name: "Product 2",
+        price: 2000,
+        stock: 20
+    },
+];
+
+const addPropertiesProduct = (array) => {
+    const output = array.map(product => {
+        const taxes = product.price*0.19;
+        return {
+            ...product,
+            taxes
+        }
+    });
+    console.log(output);
+    return output;
+};
+
+addPropertiesProduct(productsStock);

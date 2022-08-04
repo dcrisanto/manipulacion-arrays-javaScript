@@ -18,14 +18,19 @@ html {
 
 .section-products {
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   padding-top: 40px;
-  background-color: var(--background-primary);
 }
 
-.section-products-container {
+.container-products {
   width: 80%;
+  max-width: 500px;
+  display: grid;
+  gap: 15px;
+  background-color: var(--background-primary);
+  padding: 20px;
 }
 
 .product {
@@ -33,7 +38,6 @@ html {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
-  margin-bottom: 10px;
 }
 
 .position {
@@ -42,4 +46,14 @@ html {
 
 .position-price {
   grid-column: 4/5;
+}
+
+.container-products-title {
+  text-align: center;
+}
+
+.container-products-btn {
+  width: 200px;
+  height: 30px;
+  justify-self: center;
 }
