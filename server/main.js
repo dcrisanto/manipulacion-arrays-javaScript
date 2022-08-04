@@ -103,3 +103,51 @@ const addPropertiesProduct = (array) => {
 };
 
 addPropertiesProduct(productsStock);
+
+//Filter
+const words = ['spray', 'limit', 'elite', 'exuberant'];
+const newArrayWords = [];
+
+for (let index = 0; index < words.length; index++) {
+    const element = words[index];
+    if(element.length > 5) {
+        newArrayWords.push(element);
+    }
+}
+
+const wordsLength = words.filter(element => element.length > 5);
+
+const orders = [
+    {
+        customerName: 'Nicolas',
+        total: 60,
+        delivered: false
+    },
+    {
+        customerName: 'Fabiola',
+        total: 160,
+        delivered: true
+    },
+    {
+        customerName: 'Natacha',
+        total: 60,
+        delivered: true
+    },
+    {
+        customerName: 'Nataniel',
+        total: 60,
+        delivered: true
+    }
+];
+
+const ordersDelivered = orders.filter(element => element.delivered && element.total > 120);
+
+const input = 'Nata';
+
+const search = (query) => {
+    const resultSearch = orders.filter(element => element.customerName.includes(query));
+    console.log(resultSearch);
+    return resultSearch;
+};
+
+search(input);
