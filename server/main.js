@@ -151,3 +151,13 @@ const search = (query) => {
 };
 
 search(input);
+
+const newWords = ['amor', 'sol', 'piedra', 'día'];
+
+const wordsLengthGreater4 = (array) => {
+    const filterWords = array.filter(element => element.length >= 4);
+    console.log(filterWords);
+    return filterWords;
+};
+
+wordsLengthGreater4(newWords);
